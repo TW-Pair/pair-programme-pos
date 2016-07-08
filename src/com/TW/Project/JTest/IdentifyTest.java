@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 import java.lang.reflect.Array;
 import java.util.*;
 
-public class Jtest {
+public class IdentifyTest {
   @Test
   public void testIdentifyBarcodes() {
     HashMap<String, Integer> hm = new HashMap<String, Integer>();
