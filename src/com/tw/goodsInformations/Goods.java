@@ -1,6 +1,6 @@
-package com.TW.Project.GoodsInformations;
+package com.tw.goodsInformations;
 
-public class GoodsInformation {
+public class Goods {
   private String barcode;
   private String name;
   private String unit;

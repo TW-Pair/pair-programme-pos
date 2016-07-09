@@ -1,4 +1,4 @@
-package com.TW.Project.Privilege;
+package com.tw.privilege;
 
 
 import java.util.List;
