@@ -1,12 +1,12 @@
-import com.tw.buildReceipts.BuildReceipts;
+import com.tw.receiptsBuilder.ReceiptsBuilder;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-public class BuildReceiptsTest {
-  BuildReceipts buildReceipts;
+public class receiptsBuilderTest {
+  ReceiptsBuilder ReceiptsBuilder;
   @Before
   public void init() {
-    buildReceipts = new BuildReceipts();
+    ReceiptsBuilder = new ReceiptsBuilder();
   }
 
   @Test
@@ -27,7 +27,7 @@ public class BuildReceiptsTest {
       "总计: 93.92(元)\n" +
       "节省: 12.58(元)\n" +
       "**************************";
-    assertEquals(receipt, buildReceipts.buildReceipts(goods_path,input_path,privilege_path));
+    assertEquals(receipt, ReceiptsBuilder.buildReceipts(goods_path,input_path,privilege_path));
   }
 
 

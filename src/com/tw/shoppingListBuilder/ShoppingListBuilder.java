@@ -1,4 +1,4 @@
-package com.tw.factory;
+package com.tw.shoppingListBuilder;
 
 import com.tw.goods.GoodsItem;
 import com.tw.goodsInformations.Goods;
@@ -10,7 +10,7 @@ import com.tw.shopping_list.*;
 import java.util.*;
 
 
-public class Factory {
+public class ShoppingListBuilder {
   public ShoppingList factory(String goods_path, String input_path, String priv_path) {
     ShoppingList shoppingList = new ShoppingList();
     GoodsListParser goodsListParser = new GoodsListParser();

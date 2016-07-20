@@ -1,6 +1,6 @@
-package com.tw.buildReceipts;
+package com.tw.receiptsBuilder;
 
-import com.tw.factory.Factory;
+import com.tw.shoppingListBuilder.ShoppingListBuilder;
 import com.tw.goods.GoodsItem;
 import com.tw.privilege.Privilege;
 import com.tw.shopping_list.ShoppingList;
@@ -8,12 +8,12 @@ import com.tw.shopping_list.ShoppingList;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class BuildReceipts {
+public class ReceiptsBuilder {
   public String buildReceipts(String goods_path, String input_path, String priv_path) {
     StringBuilder receipts = new StringBuilder("***<没钱赚商店>购物清单***\n");
     DecimalFormat decimalFormat = new DecimalFormat("#.00");
-    Factory factory = new Factory();
-    ShoppingList shoppingList_total = factory.factory(goods_path, input_path, priv_path);
+    ShoppingListBuilder shoppingListBuilder = new ShoppingListBuilder();
+    ShoppingList shoppingList_total = shoppingListBuilder.factory(goods_path, input_path, priv_path);
     ShoppingList shoppingList_ThreeSendOne = new ShoppingList();
     Privilege privilege = new Privilege();
     ArrayList<String> id_list = shoppingList_total.getIdList();
