@@ -1,21 +1,44 @@
 package com.tw.privilege;
 
+import com.tw.calculate.Calculate;
 import com.tw.goods.GoodsItem;
 import com.tw.shopping_list.ShoppingList;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Privilege {
 
-  public double doPrivilege(String type, GoodsItem goodsItem) {
-    int amount = goodsItem.getAmount();
-    double price = Double.parseDouble(goodsItem.getGoods().getPrice());
-    if(type.equals("Discount") && amount >= 10) {
-      double total = Math.round((0.95 * amount * price) * 100) * 0.01d;
-      return total;
+  public double privilege(String type, GoodsItem goodsItem) {
+    Calculate calculate = new Calculate();
+    if(type.equals("Discount")) {
+      return calculate.calculate(goodsItem.getAmount(), Double.parseDouble(goodsItem.getGoods().getPrice()), 0.95);
+    }else if(type.equals("ThreeSendOne")) {
+      return calculate.calculate(PrivAcountByThreeSendOne(goodsItem.getAmount()), Double.parseDouble(goodsItem.getGoods().getPrice()), 1);
     }
-    return amount * price;
+    return goodsItem.getOriginal_count();
+  }
+  public int PrivAcountByThreeSendOne(int acount) {
+    if(acount <= 2) {
+      return acount;
+    }
+    return acount - acount / 3;
+  }
+
+  public String identifyPrivilegeType(GoodsItem goodsItem) {
+    ArrayList<String> priv_info = goodsItem.getPriv_info();
+    for(String type : priv_info) {
+      if(type.equals("ThreeSendOne")) {
+        return "ThreeSendOne";
+      }
+    }
+    for(String type : priv_info) {
+      if(type.equals("Discount")) {
+        return "Discount";
+      }
+    }
+    return "";
   }
 
   public boolean hasPrivGoods(String[] priv_list, ShoppingList shoppingList) {
@@ -31,9 +54,14 @@ public class Privilege {
     return false;
   }
 
-  public boolean isPrivGoods(String[] priv_list, String barcode) {
-    for(String priv_Id : priv_list) {
-      if(priv_Id.equals(barcode)) {
+  public boolean isPrivGoods(GoodsItem goodsItem) {
+    String type = identifyPrivilegeType(goodsItem);
+    if(type.equals("Discount")) {
+      if(goodsItem.getAmount() >= 10) {
+        return true;
+      }
+    } else if(type.equals("ThreeSendOne")) {
+      if(goodsItem.getAmount() > 2) {
         return true;
       }
     }

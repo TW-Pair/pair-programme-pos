@@ -5,15 +5,13 @@ public class Goods {
   private String name;
   private String unit;
   private String category;
-  private String subCategory;
   private String price;
 
-  public Goods(String barcode, String name, String unit, String category, String subCategory, String price) {
+  public Goods(String barcode, String name, String unit, String category, String price) {
     this.barcode = barcode;
     this.name = name;
     this.unit = unit;
     this.category = category;
-    this.subCategory = subCategory;
     this.price = price;
   }
 
@@ -47,14 +45,6 @@ public class Goods {
 
   public void setCategory(String category) {
     this.category = category;
-  }
-
-  public String getSubCategory() {
-    return subCategory;
-  }
-
-  public void setSubCategory(String subCategory) {
-    this.subCategory = subCategory;
   }
 
   public String getPrice() {

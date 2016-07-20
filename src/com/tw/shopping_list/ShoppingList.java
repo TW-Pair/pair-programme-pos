@@ -30,14 +30,5 @@ public class ShoppingList {
     list.addAll(set);
     Collections.sort(list);
     return (ArrayList<String>)list;
-//    Set set = goodsMap.entrySet();
-//
-//    Iterator iterator = set.iterator();
-//    ArrayList<String> arrayList = new ArrayList<String>();
-//    while (iterator.hasNext()) {
-//      Map.Entry entry = (Map.Entry) iterator.next();
-//      arrayList.add((String)entry.getKey());
-//    }
-//    return arrayList;
   }
 }

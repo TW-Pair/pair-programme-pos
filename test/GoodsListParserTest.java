@@ -15,7 +15,6 @@ public class GoodsListParserTest {
     assertEquals("羽毛球", goodsMaps.get("ITEM000002").getName());
     assertEquals("个", goodsMaps.get("ITEM000002").getUnit());
     assertEquals("体育用品", goodsMaps.get("ITEM000002").getCategory());
-    assertEquals("球类用品", goodsMaps.get("ITEM000002").getSubCategory());
     assertEquals("1.00", goodsMaps.get("ITEM000002").getPrice());
   }
 }

@@ -2,5 +2,9 @@
   {
     "type":"Discount",
     "barcodes":["ITEM000001", "ITEM000003"]
+  },
+  {
+    "type":"ThreeSendOne",
+    "barcodes":["ITEM000001"]
   }
 ]
