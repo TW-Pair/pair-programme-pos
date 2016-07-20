@@ -1,15 +1,22 @@
 package com.tw.goods;
 
-/**
- * Created by Administrator on 2016/7/9.
- */
-public class GoodsItem {
-  private int amount;
-  private String goodsId;
+import com.tw.goodsInformations.Goods;
 
-  public GoodsItem(int amount, String goodsId) {
+public class GoodsItem {
+  private Goods goods;
+  private int amount;
+
+  public GoodsItem(Goods goods, int amount) {
+    this.goods = goods;
     this.amount = amount;
-    this.goodsId = goodsId;
+  }
+
+  public Goods getGoods() {
+    return goods;
+  }
+
+  public void setGoods(Goods goods) {
+    this.goods = goods;
   }
 
   public int getAmount() {
@@ -18,13 +25,5 @@ public class GoodsItem {
 
   public void setAmount(int amount) {
     this.amount = amount;
-  }
-
-  public String getGoodsId() {
-    return goodsId;
-  }
-
-  public void setGoodsId(String goodsId) {
-    this.goodsId = goodsId;
   }
 }

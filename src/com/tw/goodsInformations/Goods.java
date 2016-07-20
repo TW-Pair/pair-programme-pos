@@ -6,7 +6,16 @@ public class Goods {
   private String unit;
   private String category;
   private String subCategory;
-  private double price;
+  private String price;
+
+  public Goods(String barcode, String name, String unit, String category, String subCategory, String price) {
+    this.barcode = barcode;
+    this.name = name;
+    this.unit = unit;
+    this.category = category;
+    this.subCategory = subCategory;
+    this.price = price;
+  }
 
   public String getBarcode() {
     return barcode;
@@ -48,12 +57,13 @@ public class Goods {
     this.subCategory = subCategory;
   }
 
-  public double getPrice() {
+  public String getPrice() {
     return price;
   }
 
-  public void setPrice(double price) {
+  public void setPrice(String price) {
     this.price = price;
   }
+
 
 }
