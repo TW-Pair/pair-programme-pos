@@ -18,9 +18,9 @@ public class inputParserTest {
   public void parse() {
     String filePath = "D:/TW-Project/data/barcode.json";
     HashMap<String, Integer> inputMap = InputParser.parse(filePath);
-    assertEquals(inputMap.get("ITEM000001").intValue(), 5);
-    assertEquals(inputMap.get("ITEM000003").intValue(), 2);
-    assertEquals(inputMap.get("ITEM000005").intValue(), 3);
+    assertEquals(11, inputMap.get("ITEM000001").intValue());
+    assertEquals(13, inputMap.get("ITEM000003").intValue());
+    assertEquals(2, inputMap.get("ITEM000002").intValue());
   }
 
   @Test

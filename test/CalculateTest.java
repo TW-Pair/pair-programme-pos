@@ -6,6 +6,6 @@ public class CalculateTest {
   @Test
   public void testCalculate() {
     Calculate calculate = new Calculate();
-    assertEquals(calculate.calculate(3, 3.5, 0.95), 9.975, 0.00001);
+    assertEquals(9.975, calculate.calculate(3, 3.5, 0.95), 0.00001);
   }
 }
